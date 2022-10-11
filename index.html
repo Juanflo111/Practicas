@@ -13,9 +13,43 @@
         <main>
             <p id="demo"> Javascript puede cambiar </p>
             <button type="button" onclick='document.getElementById("demo").innerHTML ="Texto cambiado con Javascript"'>Cliqueame!</button>
-        </main>
+            <hr>
+            <h2> Cambiando un atributo de una etiqueta Html</h2>
+            <button onclick="encender()"> Encender</button>
+            <img  id="onoff" src="img/off.gif" alt="off">
+            <button onclick="apagar()"> Apagar</button>       
+            <p id="estilo"> Tamaño original del texto</p>
+            <button onclick="document.getElementById('estilo').style.color='#D3D3D3'">Cambiar color </button> 
+            <hr>
+            <h2> Cambiando el valor del atributo display con Javascript</h2>
+            <div id="ocultar-mostrar">
+                <p id="diplay"> Texto que va a ser ocultado</p>
+                <img id="display" src="img/1.png" width="300" alt="">    
+                <p>imagen chida</p>   
+            </div>              
+             <br>
+             <button onclick="ocultar()"> ocultar</button>      
+             <button onclick="mostrarInfo()"> mostrar </button>
+              <hr>
+              <h2> Ejecutando codigo Javascript </h2>            
+            </main>
         <footer>
-
         </footer>
+
+        <script>
+
+          function ocultar(){
+            document.getElementById('ocultar-mostrar').style.display = 'none'
+          }
+          function mostrarInfo(){
+            document.getElementById('ocultar-mostrar').style.display = 'block'
+          }
+          function apagar(){
+            document.getElementById('onoff').src='img/off.gif'
+          }
+          function encender(){
+            document.getElementById('onoff').src='img/on.gif'
+          }
+        </script>
     </body>
 </html>
