@@ -1,55 +1,70 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <title> Javascript</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel="stylesheet">
-    </head>
-    <body>
-        <header>
-            <h1>Cambiando el contenido de una etiqueta html</h1>
-        </header>
-        <main>
-            <p id="demo"> Javascript puede cambiar </p>
-            <button type="button" onclick='document.getElementById("demo").innerHTML ="Texto cambiado con Javascript"'>Cliqueame!</button>
-            <hr>
-            <h2> Cambiando un atributo de una etiqueta Html</h2>
-            <button onclick="encender()"> Encender</button>
-            <img  id="onoff" src="img/off.gif" alt="off">
-            <button onclick="apagar()"> Apagar</button>       
-            <p id="estilo"> Tamaño original del texto</p>
-            <button onclick="document.getElementById('estilo').style.color='#D3D3D3'">Cambiar color </button> 
-            <hr>
-            <h2> Cambiando el valor del atributo display con Javascript</h2>
-            <div id="ocultar-mostrar">
-                <p id="diplay"> Texto que va a ser ocultado</p>
-                <img id="display" src="img/1.png" width="300" alt="">    
-                <p>imagen chida</p>   
-            </div>              
-             <br>
-             <button onclick="ocultar()"> ocultar</button>      
-             <button onclick="mostrarInfo()"> mostrar </button>
-              <hr>
-              <h2> Ejecutando codigo Javascript </h2>            
-            </main>
-        <footer>
-        </footer>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> </title>
+</head>
+<body>
+  
+  <script>
+      // template string o interpolacion
 
-        <script>
+     /*  if(5<2){
+        console.log('la condicion es verdadera');
+      }else{
+        console.log('la condicion es falsa');
+      }
+      const result = (5<2)? 'control es true': 'control es false';
+      console.log(result); */
 
-          function ocultar(){
-            document.getElementById('ocultar-mostrar').style.display = 'none'
-          }
-          function mostrarInfo(){
-            document.getElementById('ocultar-mostrar').style.display = 'block'
-          }
-          function apagar(){
-            document.getElementById('onoff').src='img/off.gif'
-          }
-          function encender(){
-            document.getElementById('onoff').src='img/on.gif'
-          }
-        </script>
-    </body>
+      //  a varibles constantes no se puede reasignar valores como se muestra mas adelante 
+
+      const persona = {
+        nombre:'Pepe',
+        apellido: 'Mendez'
+      }
+      console.log(persona);
+      // persona = { nombre:'dasdas', apellido:'464654'}; // esto es errado
+      
+      // se puede cambiar el valor de las propiedades del objeto
+
+      persona.nombre = 'Alfredo' 
+      persona.apellido =' Jonas'
+      console.log(persona); 
+
+      // se pueden agregrar nuevas propiedades si no esta declarado dentro del objeto
+      persona.telefono = 465456464; 
+      console.log(persona); 
+
+      persona['telefono'] =  45787877; // esta es otra forma de acceder a las propiedades de un objeto
+      console.log(persona.telefono);  
+
+    // uso de la interpolacion o template strings  
+
+    console.log("su nombre completo es "+persona.nombre+' '+persona.apellido);  // uso de manera tradicional
+    console.log(`su nombre completo es ${persona.nombre} ${persona.apellido}`); // Uso de interpolacion  
+     
+    const person = {
+      name: "Juan Pablo", 
+      lastName:'Mejia Vargas', 
+      phone:3102032571, 
+      adress: {
+        lat:5.4264,
+        long: 5.233
+      },
+      completeName: function() {
+        return `Nombre completo: ${name} ${lastName}` 
+      }
+    }
+
+    //console.log(person); 
+    //console.log(person.completeName); 
+    console.log(person.adress.lat);    
+    console.log(`El objeto completo llamado persona es igual a: ${JSON.stringify(person)}`); // para convertir el objeto a cadena se usa el metodo  JSON.stringify
+    
+
+  </script>
+</body>
 </html>

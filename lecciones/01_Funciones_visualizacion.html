@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title> Javascript</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1>Cambiando el contenido de una etiqueta html</h1>
+        </header>
+        <main>
+            <p id="demo"> Javascript puede cambiar </p>
+            <button type="button" onclick='changeTexto("texto cambiado por JS")'>Cliqueame!</button>
+            <button type="button" onclick='changeTexto("texto Original")'>Cliqueame!</button>
+            <hr>
+            <h2> Cambiando un atributo de una etiqueta Html</h2>
+            <button onclick="encender()"> Encender</button>
+            <img  id="onoff" src="img/off.gif" alt="off">
+            <button onclick="apagar()"> Apagar</button>       
+            <p id="estilo"> Tamaño original del texto</p>
+            <button onclick="document.getElementById('estilo').style.color='#D3D3D3'">Cambiar color </button> 
+            <hr>
+            <h2> Cambiando el valor del atributo display con Javascript</h2>
+            <div id="ocultar-mostrar">
+                <p id="diplay"> Texto que va a ser ocultado</p>
+                <img id="display" src="img/1.png" width="300" alt="">    
+                <p>imagen chida</p>   
+            </div>              
+             <br>
+             <button onclick="ocultar()"> ocultar</button>     
+             <button onclick="mostrarInfo()"> mostrar </button>                                
+            </main>
+            <hr>
+            <button onclick="insertTex('jajajaa')">innerHTML</button>
+            <button onclick="document.write('Hola este es un nuevo documento')">documentWrite</button>
+            <button onclick="window.alert('Este es un mensaje de alerta')">Alert</button>
+            <button onclick="console.log('Este es un mensaje en consola')"> console log </button>
+            <button onclick="console.warn('mensaje de warning')">Consle warn</button>
+            <button onclick="window.print()">Print document</button>
+        <footer>
+        </footer>
+        <script>
+          function ocultar(){
+            document.getElementById('ocultar-mostrar').style.display = 'none'
+          }
+          function mostrarInfo(){
+            document.getElementById('ocultar-mostrar').style.display = 'block'
+          }
+          function apagar(){
+            document.getElementById('onoff').src='img/off.gif'
+          }
+          function encender(){
+            document.getElementById('onoff').src='img/on.gif'
+          }
+          function changeTexto(texto){
+            document.getElementById("demo").innerHTML= texto;
+          }        
+        </script>
+    </body>
+</html>
