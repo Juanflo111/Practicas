@@ -55,7 +55,7 @@
         long: 5.233
       },
       completeName: function() {
-        return `Nombre completo: ${name} ${lastName}` 
+        return `Nombre completo: ${person.name} ${person.lastName}` 
       }
     }
 
@@ -63,6 +63,8 @@
     //console.log(person.completeName); 
     console.log(person.adress.lat);    
     console.log(`El objeto completo llamado persona es igual a: ${JSON.stringify(person)}`); // para convertir el objeto a cadena se usa el metodo  JSON.stringify
+    console.log(person.completeName());
+
     
 
   </script>
