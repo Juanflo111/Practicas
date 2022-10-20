@@ -8,7 +8,7 @@
     </head>
     <body>
 
-        <script>
+      <script>
 
     //operador spread
       //en JavaScript cuando copiamos un objeto, no estamos haciendo una clonacion del mismo
@@ -18,7 +18,6 @@
         model: 'Chipichipi',
         color: 'Rojo'
       }
-
       // const car02 = car01 ; //si usamos esta asignacion directa, se copia la referencia en memoria del objeto car01 hacia el objeto car02
       // usando el operador spread
       const car02 = {...car01} ; //para evitar tener la misma referencia de memoria para ambos objetos se usa el operador spread
@@ -29,7 +28,24 @@
       console.log(car01);
       car02.model = 'F500'
       console.log(car02);
-        </script>
+
+      const user = {
+        nombre: 'pedro', 
+        apellido: 'Perez', 
+        edad: 30
+      }
+      console.log(user); 
+      // al utilizar el metodo global JSON.stringify convierte un objeto a formato string 
+      const cadenaTipoJson = JSON.stringify(user); 
+      console.log(cadenaTipoJson); 
+      // Cuando llega al back lo recibe en formato cadena y lo tiene que regresar a formato object
+      const variableTipoObjeto = JSON.parse(cadenaTipoJson);
+      console.log(variableTipoObjeto); 
+
+
+
+
+      </script>
     
     </body>
 </html>

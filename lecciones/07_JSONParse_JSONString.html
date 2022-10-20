@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <script>
+            const user = {
+                nombre: 'pedro', 
+                apellido: 'Perez', 
+                edad: 30
+              }
+              console.log(user); 
+              // al utilizar el metodo global JSON.stringify convierte un objeto a formato string 
+              const cadenaTipoJson = JSON.stringify(user); 
+              console.log(cadenaTipoJson); 
+              // Cuando llega al back lo recibe en formato cadena y lo tiene que regresar a formato object
+              const variableTipoObjeto = JSON.parse(cadenaTipoJson);
+              console.log(variableTipoObjeto); 
+        </script>
+    
+    </body>
+</html>
