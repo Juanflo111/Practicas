@@ -1,49 +1,56 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> </title>
-</head>
-<body>
-  
-  <p id="demo" style="font-size:35px;"></p>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>G32</title>
+    <link rel="stylesheet" href="" />
+  </head>
+  <body>
+    <p id="demo" style="font-size: 35px;"></p>
 
-  <script>
-    
-    /* const user = {
-      nombre: 'alfredo',
-      apellido:'salas',
-      edad:56
-    } */
+    <script>
+      const cars01 = ['ford','audi','bmw','volvo'];
+      // const cars02 = [cars01, 'ferrari', 'porsche'];  //la salida que quiero es ['ford', 'audi' , 'bmw', 'ferrari', 'porsche']
+      const cars02 = [...cars01, 'ferrari', 'porsche'];  //para que pueda salir con la salida esperada se usa el operador spread
+      console.log(cars02);
 
-    const cars = ['mazda', 'BMW', 'Ferrari', 'Volvo']; 
-    const cars2 = [cars,'Pichirilo', 'Zorrari','bicimoto'];
-    const cars3 = ['Mitsubishi', 'Onda', ...cars, cars2, 'Porshe']; 
+      //metodo length que permite tener el tamaño de un arreglo y lo usamos sobre todo en ciclos
+      // for(let i = 0; i < cars02.length; i++){
+      //   console.log(`Posicion No ${i}: ${cars02[i]}`);
+      // }
 
-    document.getElementById('demo').innerHTML = cars3; // si inserta en el html todo el array o su contenido de igual forma se copia el array cars
-    //document.getElementById('demo').innerHTML = user.apellido; // no inserta todo el objeto en el html, hay que especificar su propiedad
-    
-    for(let i= 0; i<cars2.length; i++){
-      console.log(`Posicion N° ${i}: ${cars2[i]}`);    
-    }
-    // funcion callback completa
-    cars2.forEach(function(valorDeLaPosicion){
-      return console.log(valorDeLaPosicion);
-    })
-    // funcion calback tipo flecha
-    cars2.forEach((value, indice)=> console.log(value, indice));  // esta sintaxis aplica si solo tiene una linea si no se debe colocar el retur y las llaves
-     
-   cars3.map(value => console.log(value)); 
-   
-   
-   const numeros = [10,20,30,40,50];
-   
-   const valoresDuplicados = numeros.map(value => value*2 ); 
-   console.log(valoresDuplicados); 
-    
+      //ciclo forEach en JavaScript es un metodo propio de los arrays
+      //declaracion de un metodo forEach()
+      //funcion callback tipo flecha
+      const recorridoForEach = cars02.forEach( ( value ) =>  value )
+      // cars02.forEach( ( value, indice ) => console.log( value, indice ) )  //imprimiendo tambien el indice
+ 
+      //la funcion map tambien recorre un array posicion por posicion usando una funcion callback
+      const recorridoMap = cars02.map ( value => value  )
+       // funcion callback completa
+      // cars02.forEach( function ( value ) {
+      //   return console.log( value );
+      // } )
+      console.log(recorridoForEach);
+      console.log(recorridoMap);
 
-  </script>
-</body>
+      const numeros = [ 10, 20, 30, 40, 50 ];
+      //generar un nuevo arreglo con los valores duplicados del arreglo numeros con la funcion map
+      // const doubles = numeros.map( function(item) {
+      //   return item * 2
+      // } )
+      //respuestas del ejercicio con funcion flecha
+      const doubles = numeros.map( (item) => item * 2 )
+      console.log(doubles);
+      // const user = {
+      //   nombre: 'Tony',
+      //   apellido: 'Stark',
+      //   edad: 32
+      // }
+      document.getElementById('demo').innerHTML = cars02 ; //el array se despliegue completo en etiquetas HTML
+      // document.getElementById('demo').innerHTML = `${user.nombre} ${user.apellido} y su edad es ${user.edad}` ; //los objetos  hay que desglosarlos propiedad por propiedad
+    </script>
+  </body>
 </html>
